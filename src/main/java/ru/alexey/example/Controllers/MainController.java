@@ -12,4 +12,9 @@ public class MainController {
     public String home(){
         return "index";
     }
+    @GetMapping("/new")
+    public String newEvent(){
+        return "new";
+    }
+
 }

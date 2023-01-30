@@ -63,9 +63,7 @@
       <artifactId>thymeleaf-spring5</artifactId>
       <version>3.1.1.RELEASE</version>
     </dependency>
-    <!-- Какого-то черта изначально контроллер не находил представления, хотя варнов о том, что он их не видит, не было (не получалось даже найти страницу через полный путь).
-     С javax.servlet-api не работает, но после копирования зависимостей и свойств с проекта полугодовалой давности javax.servlet-api не выдал ошибок
-     (возможно это связано с версией спринга) и контроллер выдал верное представление. После отката изменений на версию с jakarta.servlet-api оно каким-то образом заработало-->
+
     <dependency>
       <groupId>jakarta.servlet</groupId>
       <artifactId>jakarta.servlet-api</artifactId>
@@ -83,6 +81,13 @@
       <groupId>org.hibernate.validator</groupId>
       <artifactId>hibernate-validator</artifactId>
       <version>8.0.0.Final</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.24</version>
+      <scope>provided</scope>
     </dependency>
 
 

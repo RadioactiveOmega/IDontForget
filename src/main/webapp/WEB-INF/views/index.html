@@ -2,9 +2,12 @@
 <html lang="en" xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>1</title>
+    <title>Index</title>
 </head>
 <body>
-<p>Hello 1</p>
+<div th:each="event: ${events}">
+    <p th:text="${event.getId() + ', ' + event.getTitle}"></p>
+
+</div>
 </body>
 </html>

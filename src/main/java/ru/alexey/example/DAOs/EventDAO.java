@@ -9,9 +9,9 @@ import java.util.List;
 
 @Component
 public class EventDAO {
-    private static final String URL = "jdbc:postgresql://localhost:5432/xxx";
-    private static final String USERNAME = "xxx";
-    private static final String PASSWORD = "xxx";
+    private static final String URL = "jdbc:postgresql://localhost:5432/idontforget";
+    private static final String USERNAME = "postgres";
+    private static final String PASSWORD = "020219618";
     private static Connection connection;
 
     static{
@@ -38,7 +38,7 @@ public class EventDAO {
                 event.setId(resultSet.getInt("id"));
                 event.setTitle(resultSet.getString("title"));
                 event.setStartDate(resultSet.getDate("startdate"));
-                event.setPeriodicity(resultSet.getDate("periodicity"));
+                event.setPeriodicity(resultSet.getInt("periodicity"));
 
                 events.add(event);
 
@@ -49,4 +49,19 @@ public class EventDAO {
 
         return events;
     }
+    public void create(Event event){
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO events Values(1,?,?,?,?)");
+            preparedStatement.setString(1, event.getTitle());
+            preparedStatement.setString(2, event.getDescription());
+            preparedStatement.setDate(3, event.getStartDate());
+            preparedStatement.setInt(4, event.getPeriodicity());
+            preparedStatement.executeUpdate();
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+
+
+
 }

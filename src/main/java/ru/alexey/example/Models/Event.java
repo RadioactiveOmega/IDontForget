@@ -21,7 +21,6 @@ public class Event {
 
     @NotEmpty
     Date startDate;
-    @NotEmpty
-    Date periodicity;
+    Integer periodicity;
 
 }

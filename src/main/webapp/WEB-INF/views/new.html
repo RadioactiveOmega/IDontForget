@@ -6,5 +6,31 @@
 </head>
 <body>
 
+<form th:method="POST" th:action="@{/}" th:object="${event}">
+
+    <label for = "title">Your title</label>
+
+    <input type = "text" th:field="*{title}" id = "title"/>
+
+    <br>
+
+    <label for = "description">Your description</label>
+    <input type = "text" th:field="*{description}" id = "description"/>
+
+    <br>
+
+    <label for = "startDate">Your start date</label>
+    <input type = "date" th:field="*{startDate}" id = "startDate"/>
+
+    <br>
+
+    <label for = "periodicity">Your start date</label>
+    <input type = "number" th:field="*{periodicity}" id = "periodicity"/>
+
+    <br>
+
+    <input type="submit" value="Create"/>
+</form>
+
 </body>
 </html>

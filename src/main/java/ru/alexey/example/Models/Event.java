@@ -1,5 +1,6 @@
 package ru.alexey.example.Models;
 
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -21,6 +22,7 @@ public class Event {
 
     @NotEmpty
     Date startDate;
+    @Min(value = 0, message = "periodicity must be greater then 0")
     Integer periodicity;
 
 }
